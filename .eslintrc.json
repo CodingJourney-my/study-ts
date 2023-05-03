@@ -48,6 +48,7 @@
   // 0:無効, 1:警告, 2: エラー
   "rules": {
     "react/props-types": 0,
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0,
+    "@typescript-eslint/no-unused-vars": 0
   }
 }
