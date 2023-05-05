@@ -49,6 +49,9 @@
   "rules": {
     "react/props-types": 0,
     "react/react-in-jsx-scope": 0,
-    "@typescript-eslint/no-unused-vars": 0
+    // 変数を使用していないことに対するWarningを無効化
+    "@typescript-eslint/no-unused-vars": 0,
+    // 空の関数に対するエラーを無効化
+    "@typescript-eslint/no-empty-function": 0
   }
 }
