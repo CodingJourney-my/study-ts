@@ -307,3 +307,29 @@ const v5: number = f3()
 
 // エラー例
 // const v6: number = f1()
+
+// 4-1 ない場合はunknown
+function getFoo<T extends object>( // object型ではいものはエラーにする
+  obj: T
+): T extends { foo: infer U } ? U : unknown {
+  return (obj as any).foo // conditional typeが関わっている場合は型推論が頼りにならないため、anyをつける
+}
+
+// 使用例
+// numはnumber型
+const num = getFoo({
+  foo: 123,
+})
+// strはstring型
+const str = getFoo({
+  foo: 'hoge',
+  bar: 0,
+})
+// unkはunknown型
+const unk = getFoo({
+  hoge: true,
+})
+
+// エラー例
+// getFoo(123)
+// getFoo(null)
